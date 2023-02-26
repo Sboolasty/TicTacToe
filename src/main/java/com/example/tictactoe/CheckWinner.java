@@ -1,7 +1,5 @@
 package com.example.tictactoe;
 import com.example.tictactoe.*;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class CheckWinner {
 
