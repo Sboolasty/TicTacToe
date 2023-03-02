@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Mechanics {
 
-    private static boolean isBoardFull(char[][] board) {
+    public static boolean isBoardFull(char[][] board) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j] == '_') {
@@ -48,7 +48,3 @@ public class Mechanics {
 
     }
 }
-
-
-
-

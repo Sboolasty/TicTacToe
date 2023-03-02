@@ -1,13 +1,15 @@
 package com.example.tictactoe;
 import java.util.Arrays;
 import java.util.Scanner;
-import com.example.tictactoe.Mechanics;
-import com.example.tictactoe.PlayerVsPlayerMode;
-import com.example.tictactoe.PlayerVsComputerMode;
+import com.example.tictactoe.*;
 
 public class TicTacToe {
     public static void main(String[] args) {
         CheckWinner checkWinner = new CheckWinner();
+        Mechanics printBoard = new Mechanics();
+        PlayerVsComputerMode performMoveForOnePlayer = new PlayerVsComputerMode();
+        PlayerVsPlayerMode performMoveForTwoPlayers = new PlayerVsPlayerMode();
+
         System.out.println("Witaj w grze, podaj rozmiar planszy");
         System.out.println("Legenda:");
         System.out.println("Wpisz 3 aby zagrać planszę 3x3");
@@ -27,8 +29,8 @@ public class TicTacToe {
         boolean won = false;
         boolean draw = false;
         while (movesCounter < dim * dim && !won && !draw) {
-            printBoard(board);
-            boolean moveWasCorrect = vsComputer ? performMoveForOnePlayer(board, activePlayer) : performMoveForTwoPlayers(board, activePlayer);
+            printBoard.printBoard(board);
+            boolean moveWasCorrect = vsComputer ? performMoveForOnePlayer.performMoveForOnePlayer(board, activePlayer) : performMoveForTwoPlayers.performMoveForTwoPlayers(board, activePlayer);
             if (moveWasCorrect) {
                 movesCounter++;
                 won = checkWinner.checkWinner(board, activePlayer);
@@ -38,7 +40,7 @@ public class TicTacToe {
                 System.out.println("Ruch niepoprawny, spróbuj ponownie");
             }
         }
-        printBoard(board);
+        printBoard.printBoard(board);
         if (draw) {
             System.out.println("Remis!");
         } else {
@@ -56,6 +58,3 @@ public class TicTacToe {
         return mode == 2;
     }
 }
-
-
-

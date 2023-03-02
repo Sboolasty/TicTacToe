@@ -3,7 +3,7 @@ import com.example.tictactoe.*;
 import java.util.Scanner;
 
 public class PlayerVsPlayerMode {
-    private static boolean performMoveForTwoPlayers(char[][] board, char activePlayer) {
+    public static boolean performMoveForTwoPlayers(char[][] board, char activePlayer) {
         System.out.println(activePlayer + ", podaj nr wiersza");
         int row = new Scanner(System.in).nextInt();
         System.out.println(activePlayer + ", podaj nr kolumny");

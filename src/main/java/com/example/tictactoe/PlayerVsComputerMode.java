@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class PlayerVsComputerMode {
 
 
-    private static boolean performMoveForOnePlayer(char[][] board, char activePlayer) {
+    public static boolean performMoveForOnePlayer(char[][] board, char activePlayer) {
         if (activePlayer == 'X') {
             System.out.println(activePlayer + ", podaj nr wiersza");
             int row = new Scanner(System.in).nextInt();
@@ -28,12 +28,13 @@ public class PlayerVsComputerMode {
         }
     }
     public static int minimax(char[][] board, boolean isMaximizingPlayer) {
+        Mechanics isBoardFull = new Mechanics();
         CheckWinner checkWinner = new CheckWinner();
         if (checkWinner.checkWinner(board, 'X')) {
             return -10;
         } else if (checkWinner.checkWinner(board, 'O')) {
             return 10;
-        } else if (isBoardFull(board)) {
+        } else if (isBoardFull.isBoardFull(board)) {
             return 0;
         }
 
