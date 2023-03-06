@@ -17,12 +17,7 @@ public class TicTacToe {
         System.out.println("Wpisz 5 aby zagrać planszę 5x5");
         System.out.println("Wpisz 6 aby zagrać planszę 6x6" + " " + "itd.");
         int dim = new Scanner(System.in).nextInt();
-        char[][] board = new char[dim][dim];
-        for (int row = 0; row < dim; row++) {
-            for (int column = 0; column < dim; column++) {
-                board[row][column] = '_';
-            }
-        }
+        char[][] board = generateBoard(dim);
         int movesCounter = 0;
         boolean vsComputer = chooseGameMode();
         char activePlayer = 'X';
@@ -48,7 +43,15 @@ public class TicTacToe {
             System.out.println("Przegrywa gracz: " + activePlayer);
         }
     }
-
+    public static char[][] generateBoard(int dim) {
+        char[][] board = new char[dim][dim];
+        for (int row = 0; row < dim; row++) {
+            for (int column = 0; column < dim; column++) {
+                board[row][column] = '_';
+            }
+        }
+        return board;
+    }
 
     private static boolean chooseGameMode() {
         System.out.println("Wybierz tryb gry:");

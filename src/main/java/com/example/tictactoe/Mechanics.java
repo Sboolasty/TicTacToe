@@ -3,7 +3,20 @@ import com.example.tictactoe.*;
 import java.util.Scanner;
 
 public class Mechanics {
-
+    private static void ticTacToeBoard() {
+        TicTacToe chooseGameMode = new TicTacToe();
+        CheckWinner checkWinner = new CheckWinner();
+        Mechanics printBoard = new Mechanics();
+        PlayerVsComputerMode performMoveForOnePlayer = new PlayerVsComputerMode();
+        PlayerVsPlayerMode performMoveForTwoPlayers = new PlayerVsPlayerMode();
+        int dim = new Scanner(System.in).nextInt();
+        char[][] board = new char[dim][dim];
+        for (int row = 0; row < dim; row++) {
+            for (int column = 0; column < dim; column++) {
+                board[row][column] = '_';
+            }
+        }
+    }
     public static boolean isBoardFull(char[][] board) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
