@@ -3,21 +3,7 @@ import com.example.tictactoe.*;
 import java.util.Scanner;
 
 public class Mechanics {
-    private static void ticTacToeBoard() {
-        TicTacToe chooseGameMode = new TicTacToe();
-        CheckWinner checkWinner = new CheckWinner();
-        Mechanics printBoard = new Mechanics();
-        PlayerVsComputerMode performMoveForOnePlayer = new PlayerVsComputerMode();
-        PlayerVsPlayerMode performMoveForTwoPlayers = new PlayerVsPlayerMode();
-        int dim = new Scanner(System.in).nextInt();
-        char[][] board = new char[dim][dim];
-        for (int row = 0; row < dim; row++) {
-            for (int column = 0; column < dim; column++) {
-                board[row][column] = '_';
-            }
-        }
-    }
-    public static boolean isBoardFull(char[][] board) {
+    public  boolean isBoardFull(char[][] board) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j] == '_') {
@@ -28,7 +14,7 @@ public class Mechanics {
         return true;
     }
 
-    public static void printBoard(char[][] board) {
+    public  void printBoard(char[][] board) {
         int dim = board.length;
         System.out.print("\t");
         for (int i = 0; i < dim; i++) {
@@ -42,22 +28,5 @@ public class Mechanics {
             }
             System.out.println();
         }
-    }
-
-    private static boolean performMove(char[][] board, char activePlayer) {
-        System.out.println(activePlayer + ", podaj nr wiersza");
-        int row = new Scanner(System.in).nextInt();
-        System.out.println(activePlayer + ", podaj nr kolumny");
-        int col = new Scanner(System.in).nextInt();
-
-        if (board[row][col] == '_') {
-            board[row][col] = activePlayer;
-
-
-            return true;
-        } else {
-            return false;
-        }
-
     }
 }

@@ -29,7 +29,7 @@ public class PlayerVsComputerMode {
     }
     public static int minimax(char[][] board, boolean isMaximizingPlayer) {
         Mechanics isBoardFull = new Mechanics();
-        CheckWinner checkWinner = new CheckWinner();
+        WinnerChecker checkWinner = new WinnerChecker();
         if (checkWinner.checkWinner(board, 'X')) {
             return -10;
         } else if (checkWinner.checkWinner(board, 'O')) {

@@ -5,7 +5,7 @@ import com.example.tictactoe.*;
 
 public class TicTacToe {
     public static void main(String[] args) {
-        CheckWinner checkWinner = new CheckWinner();
+        WinnerChecker checkWinner = new WinnerChecker();
         Mechanics printBoard = new Mechanics();
         PlayerVsComputerMode performMoveForOnePlayer = new PlayerVsComputerMode();
         PlayerVsPlayerMode performMoveForTwoPlayers = new PlayerVsPlayerMode();
@@ -55,7 +55,7 @@ public class TicTacToe {
 
     private static boolean chooseGameMode() {
         System.out.println("Wybierz tryb gry:");
-        System.out.println("1. Gra dwuosobowa");
+        System.out.println("1. Gra6 dwuosobowa");
         System.out.println("2. Gra z komputerem");
         int mode = new Scanner(System.in).nextInt();
         return mode == 2;

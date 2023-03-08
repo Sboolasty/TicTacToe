@@ -1,7 +1,6 @@
 package com.example.tictactoe;
-import com.example.tictactoe.*;
 
-public class CheckWinner {
+public class WinnerChecker {
 
     public static boolean checkWinner(char[][] board, char activePlayer) {
         return checkFirstDiagonal(board, activePlayer) ||
